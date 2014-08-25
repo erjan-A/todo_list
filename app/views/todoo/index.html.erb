@@ -1,0 +1,19 @@
+<h1>Welcome, user</h1>
+
+<h2>Todoo</h2>
+<% @todos.each do |t| %>
+	<p>
+		<strong><%= t.name %></strong>
+		<small><%= link_to "Mark as done", todoo_path(t), :method => :put %></small>
+	</p>
+<% end %>
+
+<h2>Todone</h2>
+<% @todone.each do |t| %>
+	<p>
+		<strong><%= t.name %></strong>
+		<small><%= link_to "Remove", :confirm => "Are you sure?", :method => :delete %></small>
+	</p>
+<% end %>
+
+<p><%= link_to "Add an item to the Todoo list", new_todoo_path %></p>
